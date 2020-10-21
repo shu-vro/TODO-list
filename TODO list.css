@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    background: #151515;
+}
+header{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+.style{
+    animation: jump 1s linear 0s infinite;
+    display: inline-block;
+}
+.style:nth-child(1){
+    color: red;
+    animation-delay: .1s;
+}
+.style:nth-child(2){
+    color: orangered;
+    animation-delay: .2s;
+}
+.style:nth-child(3){
+    color: orange;
+    animation-delay: .3s;
+}
+.style:nth-child(4){
+    color: yellow;
+    animation-delay: .5s;
+}
+.style:nth-child(6){
+    color: aqua;
+    animation-delay: .6s;
+}
+.style:nth-child(7){
+    color: blue;
+    animation-delay: .7s;
+}
+.style:nth-child(8){
+    color: violet;
+    animation-delay: .8s;
+}
+.style:nth-child(9){
+    color: indigo;
+    animation-delay: .9s;
+}
+@keyframes jump {
+    0%{
+        transform: translateY(0px);
+    }
+    15%{
+        transform: translateY(-10px);
+    }
+    40%, 100%{
+        transform: translateY(0px);
+    }
+}
+
+.input_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#input{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    box-shadow: inset 0 0 10px #000000;
+}
+#addButton{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+    background: #0077ff;
+}
+#addButton::before, 
+#addButton::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 6px;
+    top: 50%;
+    left: 50%;
+    background: #000;
+    transform: translate(-50%, -50%);
+    border-radius: 300px;
+}
+#addButton::after{
+    transform: translate(-50%, -50%) rotateZ(90deg);
+}
+#addButton:active{
+    background: blue;
+}
+
+#container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#container .item{
+    position: relative;
+    margin: 20px;
+    padding: 10px;
+    border-bottom: 3px solid white;
+}
+#container .item .routine{
+    width: 270px;
+    background: none;
+    height: 30px;
+    font-size: 17px;
+    padding: 0 10px;
+    color: white;
+    outline: none;
+    border: none;
+}
+#container .item .editButton{
+    padding: 0 5px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    color: lime;
+    border: 1px solid lime;
+    font-size: 17px;
+    font-weight: bold;
+}
+#container .item .removeButton{
+    padding: 0 5px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    color: red;
+    border: 1px solid red;
+    font-size: 17px;
+    font-weight: bold;
+}
+#container .item .check{
+    position: relative;
+}
+.refresh{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+    background: #ff0080;
+}
+.refresh::before,
+.refresh::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 6px;
+    top: 50%;
+    left: 50%;
+    background: #000;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+    border-radius: 300px;
+}
+.refresh::after{
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+.refresh:active{
+    background: #ff0000;
+}
+span.line{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    border-radius: 400px;
+    background: white;
+    transition: .3s;
+}
+span.line.through{
+    width: 100%;
+}
+span.time{
+    color: white;
+    display: inline-block;
+    margin: 0 14px;
+    background: #252525;
+    padding: 3px;
+    border-radius: 5px;
+}
+span.line.through ~ .routine{
+    opacity: .2;
+}
+span.line.through ~ .time{
+    opacity: .2;
+}
+span.line.through ~ .editButton{
+    opacity: .2;
+}
+span.line.through ~ .removeButton{
+    opacity: .2;
+}
